@@ -1,0 +1,61 @@
+﻿<Application x:Class="MedSoftDashboard.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:MedSoftDashboard"
+             xmlns:viewModel="clr-namespace:MedSoftDashboard.MVVM.ViewModel"
+             xmlns:view="clr-namespace:MedSoftDashboard.MVVM.View">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/SearchBarTheme.xaml"/>
+                <ResourceDictionary Source="Theme/AddButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/DeleteButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/EditButtonTheme.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ClientsViewModel}">
+                <view:ClientsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AddClientViewModel}">
+                <view:AddClientView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EditClientViewModel}">
+                <view:EditClientView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:ProjectsViewModel}">
+                <view:ProjectsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AddProjectViewModel}">
+                <view:AddProjectView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EditProjectViewModel}">
+                <view:EditProjectView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AcquisitionsViewModel}">
+                <view:AcquisitionsView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:AddAcquisitionViewModel}">
+                <view:AddAcquisitionView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EditAcquisitionViewModel}">
+                <view:EditAcquisitionView/>
+            </DataTemplate>
+
+            <FontFamily x:Key="DefaultFont">"/Fonts/#Poppins"</FontFamily>
+            <BooleanToVisibilityConverter x:Key="BoolToVis"/>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

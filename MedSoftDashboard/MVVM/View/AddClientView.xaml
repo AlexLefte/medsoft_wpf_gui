@@ -1,0 +1,135 @@
+﻿<UserControl x:Class="MedSoftDashboard.MVVM.View.AddClientView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MedSoftDashboard.MVVM.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" d:Background="White">
+    <UserControl.Resources>
+        <Style TargetType="TextBox">
+            <Setter Property="TextWrapping" Value="WrapWithOverflow"/>
+        </Style>
+    </UserControl.Resources>
+    <Grid TextBlock.FontFamily="{StaticResource DefaultFont}" Grid.IsSharedSizeScope="True" Margin="50, 0, 30, 30" TextBlock.FontSize="15">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" 
+                   Text="Adauga client" 
+                   FontSize="28" 
+                   Margin="0 0 20 10"
+                   FontWeight="Bold"/>
+
+        <Grid Grid.Row="1" Margin="0 10 20 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Nume"/>
+            <TextBox Grid.Row="1" Margin="0 5 0 0" Text="{Binding Nume, UpdateSourceTrigger=PropertyChanged}" Width="300" HorizontalAlignment="Left"/>
+            <TextBlock Grid.Row="2" Margin="0 5 0 0" Text="{Binding PropertyNamesToErrors[Nume]}" Foreground="Red"/>
+        </Grid>
+
+        <Grid Grid.Row="2" Margin="0 0 20 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="FirstCol"/>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SecondCol"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Nume Reprezentant"/>
+            <TextBox Grid.Row="1" Grid.Column="0" Margin="0 5 0 0" Text="{Binding NumeReprezentant, UpdateSourceTrigger=PropertyChanged}" TextWrapping="WrapWithOverflow"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="0 5 0 0" Text="{Binding PropertyNamesToErrors[NumeReprezentant]}" Foreground="Red"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Prenume Reprezentant" Margin="20 0 0 0"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="20 5 0 0" Text="{Binding PrenumeReprezentant, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="20 5 0 0" Text="{Binding PropertyNamesToErrors[PrenumeReprezentant]}" Foreground="Red"/>
+        </Grid>
+
+        <Grid Grid.Row="3" Margin="0 0 20 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="FirstCol"/>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SecondCol"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Tara"/>
+            <TextBox Grid.Row="1" Grid.Column="0" Margin="0 5 0 0" Text="{Binding Tara, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="0 5 0 0" Text="{Binding PropertyNamesToErrors[Tara]}" Foreground="Red"/>
+            
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Regiune" Margin="20 0 0 0"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="20 5 0 0" Text="{Binding Regiune, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="20 5 0 0" Text="{Binding PropertyNamesToErrors[Regiune]}" Foreground="Red"/>
+        </Grid>
+
+        <Grid Grid.Row="4" Margin="0 0 20 10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="auto" SharedSizeGroup="FirstCol"/>
+                <ColumnDefinition Width="auto" SharedSizeGroup="SecondCol"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Oras"/>
+            <TextBox Grid.Row="1" Grid.Column="0" Margin="0 5 0 0" Text="{Binding Oras, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="2" Grid.Column="0" Margin="0 5 0 0" Text="{Binding PropertyNamesToErrors[Oras]}" Foreground="Red"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Adresa" Margin="20 0 0 0"/>
+            <TextBox Grid.Row="1" Grid.Column="1" Margin="20 5 0 0" Text="{Binding Adresa, UpdateSourceTrigger=PropertyChanged}"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="20 5 0 0" Text="{Binding PropertyNamesToErrors[Adresa]}" Foreground="Red"/>
+        </Grid>
+
+        <Grid Grid.Row="5" Margin="0 0 20 0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+                <RowDefinition Height="auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Text="Telefon"/>
+            <TextBox Grid.Row="1" Margin="0 5 0 0" Text="{Binding Telefon, UpdateSourceTrigger=PropertyChanged}" Width="300" HorizontalAlignment="Left"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Margin="0 5 0 0" Text="{Binding PropertyNamesToErrors[Telefon]}" Foreground="Red"/>
+        </Grid>
+
+        <StackPanel Grid.Row="6" Orientation="Horizontal">
+            <Border Margin="0 0 0 20" CornerRadius="10" BorderThickness="0" Background="White">
+                <Button Content="Adauga"  
+                        Background="#2A93D5"
+                        Command="{Binding SubmitCommand}"
+                        Style="{StaticResource AddButtonTheme}"/>
+            </Border>
+            <Border Margin="20 0 0 20" CornerRadius="10" BorderThickness="0" Background="White">
+                <Button  Content="Anuleaza"
+                         Padding="10 5"
+                         Background="Red"
+                         Command="{Binding CancelCommand}"
+                         Style="{StaticResource DeleteButtonTheme}"/>
+            </Border>
+        </StackPanel>
+    </Grid>
+</UserControl>
